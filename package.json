@@ -1,0 +1,22 @@
+{ "name": "std-esm-node-ci",
+  "version": "0.220322.1",
+  "description": "Using GitHub CI to debug standard-things/esm.",
+  "keywords": [],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/std-esm-node-ci/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/std-esm-node-ci.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/std-esm-node-ci/issues"
+  },
+  "contributors": [],
+
+  "private": true, "license": "MIT",
+
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
