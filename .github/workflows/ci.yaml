@@ -1,0 +1,38 @@
+%YAML 1.1
+# ^-- ATTN: [2019-12-31] If you use a later version, Github will fail
+#     with a bogus error message "You have an error in your yaml syntax".
+# -*- coding: UTF-8, tab-width: 4 -*-
+---
+
+on:
+    push:
+        branches:
+            -   '*'
+
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version:
+                    # -   '8.x'
+                    -   '12.x'
+                    # -   '16.x'
+                install-from:
+                    # -   'npm:esm'
+                    # -   'gh:standard-things/esm#master'
+                    -   'gh:agoric-labs/esm#Agoric'
+                    # -   'gh:agoric-labs/esm#Agoric-built'
+
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Use Node.js ${{ matrix.node-version }}
+                uses: actions/setup-node@v1
+                with:
+                    node-version: ${{ matrix.node-version }}
+            -   run: bash ci.sh
+                env:
+                    INSTALL_FROM: ${{ matrix.install-from }}
+
+
+...
